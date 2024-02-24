@@ -85,6 +85,14 @@ const useStyles = makeStyles({
     fontVariationSettings: "'slnt' 0",
     height: '30px',
   },
+  Image: {
+    width: '30px',
+    height: '30px',
+    borderRadius: '50%',
+    marginRight: '8px',
+    border: '1px solid #ccc',
+    padding: '4px 8px',
+  },
 });
 
 interface ProductCardProps {
@@ -148,7 +156,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ products }) => {
         <TableBody>
           {displayedProducts.map(product => (
             <TableRow key={product.id}>
-              <TableCell className={classes.tableText}>{product.name}</TableCell>
+              <TableCell className={classes.tableText}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  {product.photo && <img className={classes.Image} src={`http://localhost:5000/${product.photo}`} alt="Imagem do Item" />}
+                  {product.name}
+                </div>
+                </TableCell>
               <TableCell className={classes.tableText}>{product.description}</TableCell>
               <TableCell className={classes.tableText}>{product.supplier}</TableCell>
               <TableCell className={classes.tableText}>{product.category}</TableCell>
