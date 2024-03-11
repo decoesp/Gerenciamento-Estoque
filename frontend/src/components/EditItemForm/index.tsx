@@ -204,9 +204,11 @@ const EditItemForm: React.FC<EditItemFormProps> = ({ itemId }) => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: "8px",
+              width: "50%",
+              height: "50%",
             }}
           >
-{item.photo && <img  src={item.photo} alt="Imagem do Item" />}
+{item.photo && <img src={`http://localhost:5000/${item.photo}`} alt="Imagem do Item" />}
 
           </div>
           <Button
