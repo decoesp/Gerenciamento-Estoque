@@ -21,7 +21,6 @@ const AddItemForm: React.FC = () => {
       console.log('Objeto FormData:', formData);
 
       const data = new FormData();
-      // Adicione os campos ao FormData
       data.append('photo', photo ?? '');
       data.append('name', name);
       data.append('description', description);
@@ -29,12 +28,10 @@ const AddItemForm: React.FC = () => {
       data.append('category', category);
       data.append('stock', stock);
   
-      // Certifique-se de que a solicitação POST seja feita após adicionar os dados ao FormData
       await axios.post('http://localhost:5000/items/add', data);
   
       console.log('New item added successfully!');
       
-      // Limpe o formulário após o envio
       setFormData({
         photo: null,
         name: '',
@@ -82,9 +79,7 @@ const AddItemForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} action="/items/add" method="post" encType="multipart/form-data">
       <Grid container spacing={2}>
-        {/* Lado Esquerdo */}
         <Grid item xs={6}>
-          {/* Texto acima dos campos */}
           <span>Nome:</span>
           <TextField
             label="Nome"
@@ -163,7 +158,6 @@ const AddItemForm: React.FC = () => {
             }}
           />
         </Grid>
-        {/* Lado Direito */}
         <Grid item xs={6}>
           <div
             className="bg-[#FDFDFD]"

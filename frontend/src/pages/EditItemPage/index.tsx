@@ -10,8 +10,7 @@ const EditItemPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    // Verificar se a ID está sendo capturada corretamente dos parâmetros da rota
-    console.log('ID capturada dos parâmetros da rota:', id);
+
 
     const fetchOverviewData = async () => {
       try {
@@ -19,16 +18,14 @@ const EditItemPage: React.FC = () => {
         setOverviewData(response.data);
         setLastUpdatedDate(formatDate(response.data.last_updated));
 
-        // Verificar se os dados do item estão sendo obtidos corretamente e armazenados no estado
-        console.log('Dados do item obtidos:', response.data);
-        console.log('Última atualização:', lastUpdatedDate);
+
       } catch (error) {
         console.error('Erro ao carregar os dados do item:', error);
       }
     };
 
     fetchOverviewData();
-  }, [id]); // Certifique-se de incluir 'id' como dependência para que o useEffect seja acionado quando a ID mudar
+  }, [id]); 
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

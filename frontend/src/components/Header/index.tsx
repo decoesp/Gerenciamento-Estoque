@@ -8,7 +8,7 @@ import { Avatar } from "@mui/material";
 
 const Header: React.FC = () => {
   const location = useLocation();
-  const [currentPage, setCurrentPage] = useState<string>(location.pathname); // Inicia com a página atual
+  const [currentPage, setCurrentPage] = useState<string>(location.pathname); 
 
   const handlePageChange = (page: string) => {
     setCurrentPage(page);
@@ -48,11 +48,10 @@ const Header: React.FC = () => {
     <>
       <header className="border-b border-gray-300 flex justify-center items-center py-8">
         <div className="flex justify-between items-center w-full px-4">
-          {/* Logo */}
+        
           <div>
             <img src="/ColourfulLogo.svg" alt="Logo" />
           </div>
-          {/* Botões do Header */}
           <div className="flex space-x-4">
             <Link
               to="/"
@@ -61,7 +60,6 @@ const Header: React.FC = () => {
               }`}
               onClick={() => handlePageChange("/")}
             >
-              {/* SVG */}
               <StackedLineChartIcon
                 className={`h-5 w-5 ${
                   currentPage === "/" ? "text-blue-500" : "text-gray-600"
@@ -76,7 +74,6 @@ const Header: React.FC = () => {
               }`}
               onClick={() => handlePageChange("/add")}
             >
-              {/* SVG */}
               <AddHomeOutlinedIcon
                 className={`h-5 w-5 ${
                   currentPage === "/add" ? "text-blue-500" : "text-gray-600"
@@ -91,7 +88,6 @@ const Header: React.FC = () => {
               }`}
               onClick={() => handlePageChange("/reports")}
             >
-              {/* SVG */}
               <InsertChartOutlinedIcon
                 className={`h-5 w-5 ${
                   currentPage === "/reports" ? "text-blue-500" : "text-gray-600"
@@ -100,7 +96,6 @@ const Header: React.FC = () => {
               <span className="text-sm font-medium">Relatórios</span>
             </Link>
           </div>
-          {/* User Settings */}
           <div className="flex items-center space-x-2">
           <Avatar 
               variant="rounded" 

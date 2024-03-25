@@ -99,7 +99,6 @@ const EditItemForm: React.FC<EditItemFormProps> = ({ itemId }) => {
     try {
       await axios.delete(`http://localhost:5000/items/${item.id}`);
       console.log("Item excluído com sucesso!");
-      // Aqui você pode adicionar alguma lógica para atualizar o estado da aplicação após a exclusão do item
     } catch (error) {
       console.error("Erro ao excluir o item:", error);
     }

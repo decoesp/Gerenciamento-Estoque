@@ -1,5 +1,3 @@
-// types.ts
-
 export interface Product {
     [x: string]: any;
     id: number;

@@ -1,13 +1,11 @@
-// backend/middleware/uploadMiddleware.js
-const multer = require('multer');
+const multer = require("multer");
 
-// Configuração do multer para upload de arquivos
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Define o diretório de destino dos uploads
+    cb(null, "uploads/"); 
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Define o nome do arquivo
+    cb(null, Date.now() + "-" + file.originalname); 
   },
 });
 
